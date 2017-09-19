@@ -1,0 +1,8 @@
+C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\Urlaubsplaner.exe
+C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\Urlaubsplaner.pdb
+C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.MainForm.resources
+C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.csproj.GenerateResource.Cache
+C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.exe
+C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.pdb
+C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.Planer.resources
