@@ -1,11 +1,4 @@
-﻿/*
- * Erstellt mit SharpDevelop.
- * Benutzer: David
- * Datum: 19.09.2017
- * Zeit: 16:10
- * 
- * Sie können diese Vorlage unter Extras > Optionen > Codeerstellung > Standardheader ändern.
- */
+﻿
 using System;
 using System.Windows.Forms;
 

@@ -1,14 +1,9 @@
-﻿/*
- * Erstellt mit SharpDevelop.
- * Benutzer: David
- * Datum: 19.09.2017
- * Zeit: 16:56
- * 
- * Sie können diese Vorlage unter Extras > Optionen > Codeerstellung > Standardheader ändern.
- */
+﻿
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using System.Data;
 
 namespace Urlaubsplaner
 {
@@ -28,5 +23,8 @@ namespace Urlaubsplaner
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
+		
+		
+		
 	}
 }
