@@ -51,7 +51,7 @@ namespace Urlaubsplaner
 		void Button1Click(object sender, EventArgs e)
 		{
 			
-			string bla = sha256(textBox1.Text + textBox2.Text + label3.Text);
+			string bla = sha256(textBox1.Text + textBox3.Text);
 			this.label3.Text = bla;
 			
 			SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=new_DB.sqlite;Version=3;");
