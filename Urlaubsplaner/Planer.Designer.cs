@@ -41,6 +41,8 @@ namespace Urlaubsplaner
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.dataGrid1 = new System.Windows.Forms.DataGrid();
+			((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// monthCalendar1
@@ -83,11 +85,22 @@ namespace Urlaubsplaner
 			this.label4.TabIndex = 4;
 			this.label4.Text = "AnzahlTage";
 			// 
+			// dataGrid1
+			// 
+			this.dataGrid1.DataMember = "";
+			this.dataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+			this.dataGrid1.Location = new System.Drawing.Point(13, 354);
+			this.dataGrid1.Name = "dataGrid1";
+			this.dataGrid1.Size = new System.Drawing.Size(743, 234);
+			this.dataGrid1.TabIndex = 5;
+			this.dataGrid1.Navigate += new System.Windows.Forms.NavigateEventHandler(this.DataGrid1Navigate);
+			// 
 			// Planer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(768, 588);
+			this.Controls.Add(this.dataGrid1);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
@@ -96,8 +109,10 @@ namespace Urlaubsplaner
 			this.Font = new System.Drawing.Font("Poor Richard", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Name = "Planer";
 			this.Text = "Planer";
+			((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.DataGrid dataGrid1;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;

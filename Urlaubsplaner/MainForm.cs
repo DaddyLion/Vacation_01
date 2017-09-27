@@ -45,40 +45,97 @@ namespace Urlaubsplaner
 		
 		void Button1Click(object sender, System.EventArgs e)
 		{
-			String fish = "chef";
-			String tank = "bozz1";
-		
+			//String fish = "chef";
+			//String tank = "bozz1";
+		 	Planer openForm = new Planer();
+		 	
 			SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=new_DB.sqlite;Version=3;");
 			m_dbConnection.Open();
 			
-			string sql = "select Hash from user;";
-			SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);			
 			DataTable dt = new DataTable();
-			dt.Load(command.ExecuteReader());
+			string log_user = textBox1.Text;
+			string passwd_user = textBox2.Text; 
+			string pass_hash = sha256(passwd_user);
+			//string query = String.Format("Select Name From user where Name = '{0}' AND Hash = '{1}';", log_user, pass_hash);
+			 
+			// SQLiteCommand command = new SQLiteCommand(query, m_dbConnection);
+			// 			dt.Load(command.ExecuteReader());
+			// 			
+			// 			if(command.ExecuteReader().HasRows)
+			// 			{
+			// 				MessageBox.Show("Läuft bei dir");
+			// 			}
+			// 			else 
+			// 			{
+			// 				MessageBox.Show("NOOOOOOO");
+			// 			}
+			// 	
+			
+			string query = String.Format("Select * From user where Name = '{0}' AND Hash = '{1}';", log_user, pass_hash);			
+			SQLiteCommand command = new SQLiteCommand(query, m_dbConnection);
+			 			dt.Load(command.ExecuteReader());
+			 			
+						if(dt.Rows.Count > 0)
+			 			{
+						MessageBox.Show("Läuft bei dir");
+						DataRow user = dt.Rows[0];
+						user["Name"]
+						
+						
+			 			}
+			 			else 
+			 			{
+			 				MessageBox.Show("NOOOOOOO");
+						}
+			 			
+			 			
+			
+			 	
+				
+			
+				
+			
+			//dt.Load();
+			//this.label5.Text = dt.Rows[0]["Hash"].ToString();
+			
 			
 			//this.label4.Text = dt.Rows[23]["Hash"].ToString();
 			//this.label4 = dt;
 			//this.label4.Text = dt;
 			
+				
+			//string validation = sha256(textBox1.Text + textBox2.Text);
 			
-			string validation = sha256(textBox1.Text + textBox2.Text);
 			
+		    //string hAsH = label3.Text;
 		    
-			//this.label4.Text = validation;
-			
-			
-			Planer openForm = new Planer();	
+		   /*  SQLiteCommand command = new SQLiteCommand(m_dbConnection);
+		    
+		     string login = command.CommandText("Select Name From user where name = @param1;");
+			command.CommandType = CommandType.Text;
+		    command.Parameters.Add(new SQLiteParameter("@param1",log_user));
+		    command.Parameters.Add(new SQLiteParameter("@param2",passwd_user));
+		    //command.Parameters.Add(new SQLiteParameter("@param3",hAsH));
+		    command.ExecuteNonQuery();
+		    
+		 	
 			UserManager u_man = new UserManager();
 			
 			if (textBox1.Text == fish && textBox2.Text == tank)
 				u_man.ShowDialog();
 			else
-				
-			//this.Hide();
+			
+			this.Hide();
 			openForm.ShowDialog();
 			this.Close();
+		    
+		    
+		    
+			//this.label4.Text = validation;
 			
 			
+			//Planer openForm = new Planer();	
+			*/
 			
 		}
 		

@@ -14,7 +14,7 @@ namespace Urlaubsplaner
 	{
 		public Planer()
 		{
-			//
+		
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
@@ -26,5 +26,10 @@ namespace Urlaubsplaner
 		
 		
 		
+		
+		void DataGrid1Navigate(object sender, NavigateEventArgs ne)
+		{
+			
+		}
 	}
 }

@@ -51,13 +51,13 @@ namespace Urlaubsplaner
 		void Button1Click(object sender, EventArgs e)
 		{
 			
-			string bla = sha256(textBox1.Text + textBox3.Text);
+			string bla = sha256(textBox3.Text);
 			this.label3.Text = bla;
 			
 			SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=new_DB.sqlite;Version=3;");
 			m_dbConnection.Open();
 			
-			DataTable dt = new DataTable();
+			//DataTable dt = new DataTable();
 			
 			string add_user = textBox1.Text;
 			string aBteiLung = textBox2.Text; 
