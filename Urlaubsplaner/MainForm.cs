@@ -21,6 +21,8 @@ namespace Urlaubsplaner
 		public MainForm()
 		{
 			
+			
+			
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
@@ -45,9 +47,10 @@ namespace Urlaubsplaner
 		
 		void Button1Click(object sender, System.EventArgs e)
 		{
-			//String fish = "chef";
-			//String tank = "bozz1";
+			
 		 	Planer openForm = new Planer();
+		 	//UserManager u_man = new UserManager();
+		 	Select_Form s_Form = new Select_Form();
 		 	
 			SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=new_DB.sqlite;Version=3;");
 			m_dbConnection.Open();
@@ -56,43 +59,40 @@ namespace Urlaubsplaner
 			string log_user = textBox1.Text;
 			string passwd_user = textBox2.Text; 
 			string pass_hash = sha256(passwd_user);
-			//string query = String.Format("Select Name From user where Name = '{0}' AND Hash = '{1}';", log_user, pass_hash);
-			 
-			// SQLiteCommand command = new SQLiteCommand(query, m_dbConnection);
-			// 			dt.Load(command.ExecuteReader());
-			// 			
-			// 			if(command.ExecuteReader().HasRows)
-			// 			{
-			// 				MessageBox.Show("Läuft bei dir");
-			// 			}
-			// 			else 
-			// 			{
-			// 				MessageBox.Show("NOOOOOOO");
-			// 			}
-			// 	
-			
-			string query = String.Format("Select * From user where Name = '{0}' AND Hash = '{1}';", log_user, pass_hash);			
+			string query = String.Format("Select * From user where Name = '{0}' AND Hash = '{1}';", log_user, pass_hash);
 			SQLiteCommand command = new SQLiteCommand(query, m_dbConnection);
-			 			dt.Load(command.ExecuteReader());
-			 			
-						if(dt.Rows.Count > 0)
-			 			{
-						MessageBox.Show("Läuft bei dir");
-						DataRow user = dt.Rows[0];
-						user["Name"]
-						
-						
-			 			}
-			 			else 
-			 			{
-			 				MessageBox.Show("NOOOOOOO");
-						}
-			 			
-			 			
+		
+ 			dt.Load(command.ExecuteReader());
+ 			
+			if(dt.Rows.Count > 0)
+ 			{
+				int permission_add_u = Convert.ToInt32(dt.Rows[0]["add_user"]);
+				int permission_app_vac = Convert.ToInt32(dt.Rows[0]["approve_vacation"]);
+				string user = dt.Rows[0].Field<string>(1);
+                
+				if (permission_add_u == 1 && permission_app_vac == 1)
+				{
+					//MessageBox.Show("1 " + user);
+					s_Form.ShowDialog();
+				}
+				else
+				{
+					//MessageBox.Show("2 " + user);
+					openForm.ShowDialog();
+				}
+		
+ 			}
+ 			else 
+ 			{
+ 				MessageBox.Show("User oder Passwort falsch!");
+ 				
+			}
+ 			
+ 			
+
+		 	
 			
-			 	
-				
-			
+		
 				
 			
 			//dt.Load();
@@ -145,6 +145,11 @@ namespace Urlaubsplaner
 		}
 		
 		void TextBox2TextChanged(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void MainFormLoad(object sender, EventArgs e)
 		{
 			
 		}

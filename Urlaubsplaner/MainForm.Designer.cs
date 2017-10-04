@@ -110,6 +110,7 @@ namespace Urlaubsplaner
 			this.Controls.Add(this.label1);
 			this.Name = "MainForm";
 			this.Text = "Urlaubsplaner";
+			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}

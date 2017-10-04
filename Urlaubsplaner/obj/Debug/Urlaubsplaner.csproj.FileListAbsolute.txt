@@ -8,3 +8,4 @@ C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubspl
 C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.Planer.resources
 C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\System.Data.SQLite.dll
 C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.UserManager.resources
+C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.Select_Form.resources

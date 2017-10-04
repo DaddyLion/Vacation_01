@@ -7,9 +7,7 @@ using System.Data;
 
 namespace Urlaubsplaner
 {
-	/// <summary>
-	/// Description of Planer.
-	/// </summary>
+	
 	public partial class Planer : Form
 	{
 		public Planer()
