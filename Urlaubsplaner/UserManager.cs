@@ -52,39 +52,63 @@ namespace Urlaubsplaner
 		{
 			
 			string bla = sha256(textBox3.Text);
-			this.label3.Text = bla;
 			
 			SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=new_DB.sqlite;Version=3;");
 			m_dbConnection.Open();
 			
-			//DataTable dt = new DataTable();
-			
-			string add_user = textBox1.Text;
+			string user_name = textBox1.Text;
 			string aBteiLung = textBox2.Text; 
-		    string hAsH = label3.Text;
-		    
-		    
-			//string sql = "insert into user (Name, team_id, Hash) Values (add_user,a)";
+		    string add_user = textBox4.Text;
+			string id = textBox5.Text;
+		    string approve_vacation = textBox6.Text;
+		      	
+			
+			
 			
 		    SQLiteCommand command = new SQLiteCommand(m_dbConnection);
 		    
-		    command.CommandText = "Insert Into user (Name,team_id,Hash) Values (@param1,@param2,@param3)";
+		    command.CommandText = "Insert Into user (Name,team_id,Hash,add_user,ID,approve_vacation) Values (@param1,@param2,@param3,@param4,@param5,@param6)";
 			command.CommandType = CommandType.Text;
-		    command.Parameters.Add(new SQLiteParameter("@param1",add_user));
+		    command.Parameters.Add(new SQLiteParameter("@param1",user_name));
 		    command.Parameters.Add(new SQLiteParameter("@param2",aBteiLung));
-		    command.Parameters.Add(new SQLiteParameter("@param3",hAsH));
+		    command.Parameters.Add(new SQLiteParameter("@param3",bla));
+		    command.Parameters.Add(new SQLiteParameter("@param4",add_user));
+		    command.Parameters.Add(new SQLiteParameter("@param5",id));
+		    command.Parameters.Add(new SQLiteParameter("@param6",approve_vacation));
+		    
+		    
 		    command.ExecuteNonQuery();
 		    
 		 		
 		}
 		
-		void Label3Click(object sender, EventArgs e)
-		{
-			
-		}
 		
 		void Label1Click(object sender, EventArgs e)
 		{
+			
+		}
+			
+		void DataGridView1CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			DataTable table = new DataTable();
+			dataGridView1.ColumnCount = 2;
+			
+			dataGridView1.Columns[0].Name = "team_id";
+            dataGridView1.Columns[1].Name = "Abteilung";
+          
+			string[] row = new string[] { "0", "Admin"};
+            dataGridView1.Rows.Add(row);
+            
+            row = new string[] { "1", "IT"};
+            dataGridView1.Rows.Add(row);
+            
+            row = new string[] { "2", "Empfang"};
+            dataGridView1.Rows.Add(row);
+            
+            row = new string[] { "3", "CallCenter"};
+            dataGridView1.Rows.Add(row);
+			
+			
 			
 		}
 	}
