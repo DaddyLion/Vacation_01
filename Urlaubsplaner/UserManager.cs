@@ -13,6 +13,9 @@ namespace Urlaubsplaner
 	/// </summary>
 	public partial class UserManager : Form
 	{
+		
+		
+		
 		public UserManager()
 		{
 			//
@@ -37,7 +40,7 @@ namespace Urlaubsplaner
 	        return hash;
 	    }
 		
-				
+			
 		void TextBox1TextChanged(object sender, EventArgs e)
 		{
 			 
@@ -63,7 +66,7 @@ namespace Urlaubsplaner
 		    string approve_vacation = textBox6.Text;
 		      	
 			
-			
+
 			
 		    SQLiteCommand command = new SQLiteCommand(m_dbConnection);
 		    
@@ -75,8 +78,6 @@ namespace Urlaubsplaner
 		    command.Parameters.Add(new SQLiteParameter("@param4",add_user));
 		    command.Parameters.Add(new SQLiteParameter("@param5",id));
 		    command.Parameters.Add(new SQLiteParameter("@param6",approve_vacation));
-		    
-		    
 		    command.ExecuteNonQuery();
 		    
 		 		
@@ -87,29 +88,6 @@ namespace Urlaubsplaner
 		{
 			
 		}
-			
-		void DataGridView1CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			DataTable table = new DataTable();
-			dataGridView1.ColumnCount = 2;
-			
-			dataGridView1.Columns[0].Name = "team_id";
-            dataGridView1.Columns[1].Name = "Abteilung";
-          
-			string[] row = new string[] { "0", "Admin"};
-            dataGridView1.Rows.Add(row);
-            
-            row = new string[] { "1", "IT"};
-            dataGridView1.Rows.Add(row);
-            
-            row = new string[] { "2", "Empfang"};
-            dataGridView1.Rows.Add(row);
-            
-            row = new string[] { "3", "CallCenter"};
-            dataGridView1.Rows.Add(row);
-			
-			
-			
-		}
+		
 	}
 }

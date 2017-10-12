@@ -17,11 +17,9 @@ namespace Urlaubsplaner
 	/// </summary>
 	public partial class MainForm : Form
 	{
-		
+	
 		public MainForm()
 		{
-			
-			
 			
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
@@ -47,8 +45,6 @@ namespace Urlaubsplaner
 		
 		void Button1Click(object sender, System.EventArgs e)
 		{
-			
-		 	Planer openForm = new Planer();
 		 	//UserManager u_man = new UserManager();
 		 	Select_Form s_Form = new Select_Form();
 		 	
@@ -69,18 +65,20 @@ namespace Urlaubsplaner
 				int permission_add_u = Convert.ToInt32(dt.Rows[0]["add_user"]);
 				int permission_app_vac = Convert.ToInt32(dt.Rows[0]["approve_vacation"]);
 				string user = dt.Rows[0].Field<string>(1);
-                
+               
 				if (permission_add_u == 1 && permission_app_vac == 1)
 				{
-					//MessageBox.Show("1 " + user);
+					MessageBox.Show("1 " + user);
 					s_Form.ShowDialog();
+					
 				}
 				else
 				{
 					//MessageBox.Show("2 " + user);
+					Planer openForm = new Planer(user);
 					openForm.ShowDialog();
 				}
-		
+	
  			}
  			else 
  			{
@@ -88,55 +86,6 @@ namespace Urlaubsplaner
  				
 			}
  			
- 			
-
-		 	
-			
-		
-				
-			
-			//dt.Load();
-			//this.label5.Text = dt.Rows[0]["Hash"].ToString();
-			
-			
-			//this.label4.Text = dt.Rows[23]["Hash"].ToString();
-			//this.label4 = dt;
-			//this.label4.Text = dt;
-			
-				
-			//string validation = sha256(textBox1.Text + textBox2.Text);
-			
-			
-		    //string hAsH = label3.Text;
-		    
-		   /*  SQLiteCommand command = new SQLiteCommand(m_dbConnection);
-		    
-		     string login = command.CommandText("Select Name From user where name = @param1;");
-			command.CommandType = CommandType.Text;
-		    command.Parameters.Add(new SQLiteParameter("@param1",log_user));
-		    command.Parameters.Add(new SQLiteParameter("@param2",passwd_user));
-		    //command.Parameters.Add(new SQLiteParameter("@param3",hAsH));
-		    command.ExecuteNonQuery();
-		    
-		 	
-			UserManager u_man = new UserManager();
-			
-			if (textBox1.Text == fish && textBox2.Text == tank)
-				u_man.ShowDialog();
-			else
-			
-			this.Hide();
-			openForm.ShowDialog();
-			this.Close();
-		    
-		    
-		    
-			//this.label4.Text = validation;
-			
-			
-			//Planer openForm = new Planer();	
-			*/
-			
 		}
 		
 		void TextBox1TextChanged(object sender, EventArgs e)

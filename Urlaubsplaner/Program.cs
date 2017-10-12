@@ -9,6 +9,8 @@ namespace Urlaubsplaner
 	/// </summary>
 	internal sealed class Program
 	{
+		//public string user;
+		
 		/// <summary>
 		/// Program entry point.
 		/// </summary>
@@ -18,6 +20,7 @@ namespace Urlaubsplaner
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
+			
 		}
 		
 	}

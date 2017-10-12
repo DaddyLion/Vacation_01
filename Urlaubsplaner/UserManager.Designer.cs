@@ -43,14 +43,12 @@ namespace Urlaubsplaner
 			this.button1 = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.label3 = new System.Windows.Forms.Label();
 			this.textBox4 = new System.Windows.Forms.TextBox();
 			this.textBox5 = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.textBox6 = new System.Windows.Forms.TextBox();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBox1
@@ -111,15 +109,6 @@ namespace Urlaubsplaner
 			this.textBox3.Size = new System.Drawing.Size(100, 20);
 			this.textBox3.TabIndex = 7;
 			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(521, 284);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-			this.dataGridView1.TabIndex = 8;
-			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
-			// 
 			// label3
 			// 
 			this.label3.Location = new System.Drawing.Point(545, 87);
@@ -178,7 +167,6 @@ namespace Urlaubsplaner
 			this.Controls.Add(this.textBox5);
 			this.Controls.Add(this.textBox4);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.button1);
@@ -188,7 +176,6 @@ namespace Urlaubsplaner
 			this.Controls.Add(this.textBox1);
 			this.Name = "UserManager";
 			this.Text = "UserManager";
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
@@ -198,7 +185,6 @@ namespace Urlaubsplaner
 		private System.Windows.Forms.TextBox textBox5;
 		private System.Windows.Forms.TextBox textBox4;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button button1;

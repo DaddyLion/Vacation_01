@@ -10,7 +10,7 @@ namespace Urlaubsplaner
 	/// </summary>
 	public partial class Select_Form : Form
 	{
-			Planer openForm = new Planer();
+		Planer openForm = new Planer("");
 		 	UserManager u_man = new UserManager();
 		public Select_Form()
 		{
