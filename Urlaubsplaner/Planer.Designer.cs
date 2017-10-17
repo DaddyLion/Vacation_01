@@ -45,9 +45,8 @@ namespace Urlaubsplaner
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.button1 = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.label9 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// monthCalendar1
@@ -128,14 +127,6 @@ namespace Urlaubsplaner
 			this.label8.Size = new System.Drawing.Size(100, 23);
 			this.label8.TabIndex = 9;
 			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(13, 306);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(735, 227);
-			this.dataGridView1.TabIndex = 10;
-			// 
 			// button1
 			// 
 			this.button1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
@@ -147,13 +138,20 @@ namespace Urlaubsplaner
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
+			// label9
+			// 
+			this.label9.Location = new System.Drawing.Point(46, 377);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(746, 125);
+			this.label9.TabIndex = 12;
+			// 
 			// Planer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(980, 618);
+			this.Controls.Add(this.label9);
 			this.Controls.Add(this.button1);
-			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label6);
@@ -166,11 +164,10 @@ namespace Urlaubsplaner
 			this.Font = new System.Drawing.Font("Poor Richard", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Name = "Planer";
 			this.Text = "Planer";
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label6;

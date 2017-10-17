@@ -68,7 +68,7 @@ namespace Urlaubsplaner
                
 				if (permission_add_u == 1 && permission_app_vac == 1)
 				{
-					MessageBox.Show("1 " + user);
+					//MessageBox.Show("1 " + user);
 					s_Form.ShowDialog();
 					
 				}
