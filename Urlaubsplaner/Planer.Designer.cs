@@ -47,12 +47,15 @@ namespace Urlaubsplaner
 			this.label8 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label9 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// monthCalendar1
 			// 
 			this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(4, 1);
-			this.monthCalendar1.Location = new System.Drawing.Point(13, 19);
+			this.monthCalendar1.Location = new System.Drawing.Point(46, 19);
 			this.monthCalendar1.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
 			this.monthCalendar1.MaxSelectionCount = 40;
 			this.monthCalendar1.Name = "monthCalendar1";
@@ -130,7 +133,7 @@ namespace Urlaubsplaner
 			// button1
 			// 
 			this.button1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
-			this.button1.Location = new System.Drawing.Point(789, 306);
+			this.button1.Location = new System.Drawing.Point(789, 208);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(179, 68);
 			this.button1.TabIndex = 11;
@@ -140,16 +143,37 @@ namespace Urlaubsplaner
 			// 
 			// label9
 			// 
-			this.label9.Location = new System.Drawing.Point(46, 377);
+			this.label9.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
+			this.label9.Location = new System.Drawing.Point(46, 305);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(746, 125);
+			this.label9.Size = new System.Drawing.Size(868, 53);
 			this.label9.TabIndex = 12;
+			// 
+			// label10
+			// 
+			this.label10.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
+			this.label10.Location = new System.Drawing.Point(46, 370);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(745, 47);
+			this.label10.TabIndex = 13;
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Location = new System.Drawing.Point(46, 420);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Modern No. 20", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dataGridView1.Size = new System.Drawing.Size(816, 186);
+			this.dataGridView1.TabIndex = 15;
 			// 
 			// Planer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(980, 618);
+			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.label10);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label8);
@@ -164,8 +188,11 @@ namespace Urlaubsplaner
 			this.Font = new System.Drawing.Font("Poor Richard", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Name = "Planer";
 			this.Text = "Planer";
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label8;

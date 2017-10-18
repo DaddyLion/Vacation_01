@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
@@ -48,16 +49,14 @@ namespace Urlaubsplaner
 		      SelectionRange property of the MonthCalendar control. */
 		   this.monthCalendar1.SelectionRange = sr;
 		}
-		
-		
 	     
 		void MonthCalendar1DateChanged(object sender, DateRangeEventArgs e)
 		{
 			DateTime dtOne = monthCalendar1.SelectionRange.Start.Date;
 			DateTime dtTwo = monthCalendar1.SelectionRange.End.Date;
-			
+			 
 			TimeSpan diff = dtTwo - dtOne;
-						
+			
 				/* Display the Start and End property values of 
 		      the SelectionRange object in the text boxes. */
 		   this.label6.Text = 
@@ -65,13 +64,9 @@ namespace Urlaubsplaner
 		   this.label7.Text = 
 		     monthCalendar1.SelectionRange.End.Date.ToShortDateString();
 		   
-		   //this.label8.Text = (label6.Text + label7.Text).ToString();
-	
 		   this.label8.Text = Convert.ToString(diff.TotalDays + 1);
 		}
-		
-		
-		
+	
 		void Button1Click(object sender, EventArgs e)
 		{
 			/*PdfDocument antrag = new PdfDocument();
@@ -87,6 +82,7 @@ namespace Urlaubsplaner
 	
 			*/
 			DataTable dt = new DataTable();
+			DataTable dt2 = new DataTable();
 			SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=new_DB.sqlite;Version=3;");
 			m_dbConnection.Open();
 			
@@ -95,23 +91,27 @@ namespace Urlaubsplaner
 			string eDay = this.label7.Text;
 			string tDays = this.label8.Text;
 			string vIssues = this.label9.Text;
-			string query2 = String.Format("Insert Into Urlaubsübersicht (Von,Bis,Entspricht_Tage,User_ID) Values ('{0}','{1}','{2}','{3}');",fDay,eDay,tDays,player);
-			string query3 = String.Format("select * from Urlaubsübersicht");
+			
+			DateTime dTime =  DateTime.ParseExact(fDay,"dd'.'MM'.'yyyy",CultureInfo.InvariantCulture);
+			DateTime dTime2 =  DateTime.ParseExact(eDay,"dd'.'MM'.'yyyy",CultureInfo.InvariantCulture);
+			string newTime = dTime.ToString("yyyyMMdd");
+			string newTime2 = dTime2.ToString("yyyyMMdd");
+			
+			string query2 = String.Format("Insert Into Urlaubsübersicht (Von,Bis,Entspricht_Tage,User_ID) Values ('{0}','{1}','{2}','{3}');",newTime,newTime2,tDays,player);
+			string query3 = String.Format("Select * From Urlaubsübersicht where Von BETWEEN '{0}' AND  '{1}';", newTime,newTime2);
 			SQLiteCommand command = new SQLiteCommand(query2, m_dbConnection);
 			SQLiteCommand command1 = new SQLiteCommand(query3, m_dbConnection);
+			
 			command.ExecuteNonQuery();
- 			dt.Load(command1.ExecuteReader());
+ 			dt2.Load(command1.ExecuteReader());
  			
+ 			this.label9.Text = "Der Urlaub für " + player + " in der Zeit von " + fDay  + " bis " + eDay  +" wurde beantragt";
+ 			this.label10.Text = "Das entspricht " + tDays + " Urlaubstage";
  			
- 			this.label9.Text = (dt.Rows[1].Field<string>("User_ID"));
+ 			DataGridView dataGridView1 = new DataGridView();
  			
+ 			this.dataGridView1.DataSource = dt2;
  			
- 			//this.label9.Text = Convert.ToString(query3);
-			//MessageBox.Show(dt.Rows[1].Field<string>(0));
-			
-			
-			
-			
             
 		}
 	
