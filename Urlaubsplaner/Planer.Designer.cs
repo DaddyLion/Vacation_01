@@ -36,8 +36,6 @@ namespace Urlaubsplaner
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +49,10 @@ namespace Urlaubsplaner
 			this.label9 = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label12 = new System.Windows.Forms.Label();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -76,7 +78,7 @@ namespace Urlaubsplaner
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
-			this.label2.Location = new System.Drawing.Point(208, 233);
+			this.label2.Location = new System.Drawing.Point(416, 233);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(100, 23);
 			this.label2.TabIndex = 2;
@@ -85,7 +87,7 @@ namespace Urlaubsplaner
 			// label3
 			// 
 			this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
-			this.label3.Location = new System.Drawing.Point(348, 233);
+			this.label3.Location = new System.Drawing.Point(611, 233);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(100, 23);
 			this.label3.TabIndex = 3;
@@ -94,7 +96,7 @@ namespace Urlaubsplaner
 			// label4
 			// 
 			this.label4.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
-			this.label4.Location = new System.Drawing.Point(552, 233);
+			this.label4.Location = new System.Drawing.Point(798, 233);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(100, 23);
 			this.label4.TabIndex = 4;
@@ -111,7 +113,7 @@ namespace Urlaubsplaner
 			// label6
 			// 
 			this.label6.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(208, 271);
+			this.label6.Location = new System.Drawing.Point(416, 270);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(100, 23);
 			this.label6.TabIndex = 7;
@@ -119,7 +121,7 @@ namespace Urlaubsplaner
 			// label7
 			// 
 			this.label7.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
-			this.label7.Location = new System.Drawing.Point(348, 271);
+			this.label7.Location = new System.Drawing.Point(611, 268);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(100, 23);
 			this.label7.TabIndex = 8;
@@ -127,15 +129,16 @@ namespace Urlaubsplaner
 			// label8
 			// 
 			this.label8.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
-			this.label8.Location = new System.Drawing.Point(552, 270);
+			this.label8.Location = new System.Drawing.Point(798, 268);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(100, 23);
 			this.label8.TabIndex = 9;
 			// 
 			// button1
 			// 
+			this.button1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
 			this.button1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
-			this.button1.Location = new System.Drawing.Point(789, 208);
+			this.button1.Location = new System.Drawing.Point(782, 113);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(179, 68);
 			this.button1.TabIndex = 11;
@@ -162,34 +165,61 @@ namespace Urlaubsplaner
 			// dataGridView1
 			// 
 			this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dataGridView1.Location = new System.Drawing.Point(46, 420);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Modern No. 20", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dataGridView1.Size = new System.Drawing.Size(816, 186);
 			this.dataGridView1.TabIndex = 15;
 			// 
+			// label11
+			// 
+			this.label11.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
+			this.label11.Location = new System.Drawing.Point(276, 232);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(100, 23);
+			this.label11.TabIndex = 16;
+			this.label11.Text = "Team ID";
+			// 
+			// label12
+			// 
+			this.label12.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
+			this.label12.Location = new System.Drawing.Point(276, 268);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(100, 23);
+			this.label12.TabIndex = 17;
+			// 
+			// button2
+			// 
+			this.button2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
+			this.button2.Location = new System.Drawing.Point(782, 113);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(179, 68);
+			this.button2.TabIndex = 18;
+			this.button2.Text = "Genehmigen";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.Button2Click);
+			// 
+			// button3
+			// 
+			this.button3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
+			this.button3.Location = new System.Drawing.Point(782, 39);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(179, 68);
+			this.button3.TabIndex = 19;
+			this.button3.Text = "User Anlegen";
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.Button3Click);
+			// 
 			// Planer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(980, 618);
+			this.Controls.Add(this.button3);
+			this.Controls.Add(this.button2);
+			this.Controls.Add(this.label12);
+			this.Controls.Add(this.label11);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.label10);
 			this.Controls.Add(this.label9);
@@ -209,6 +239,10 @@ namespace Urlaubsplaner
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label9;

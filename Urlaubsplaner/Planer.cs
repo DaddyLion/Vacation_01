@@ -1,16 +1,18 @@
 ﻿
+
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Data;
-using System.Globalization;
+using System.Text;
 using PdfSharp;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf.Printing;
 using PdfSharp.Pdf;
+using System.Globalization;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace Urlaubsplaner
 {
@@ -19,12 +21,32 @@ namespace Urlaubsplaner
 	
 	{
 			
-		public Planer(string user)
+		public Planer(string user, string team)
 		{
-			
 			InitializeComponent();
 			
+			DataTable dt_all = new DataTable();
 			this.label5.Text = user;
+			this.label12.Text = team;
+			this.button2.Visible = false;
+			this.button3.Visible = false;
+			SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=new_DB.sqlite;Version=3;");
+			m_dbConnection.Open();
+			string applikation = "Ja";                       
+			string query_all = String.Format("Select * From Urlaubsübersicht Where Beantragt = '{0}';",applikation);
+			SQLiteCommand command = new SQLiteCommand (query_all,m_dbConnection);
+			
+			dt_all.Load(command.ExecuteReader());
+			
+			if (team == "0") {
+				this.button2.Visible = true;
+				this.button3.Visible = true;
+				
+				this.dataGridView1.DataSource = dt_all;
+				
+				
+			}
+				
 			
 			/*DataTable dt = new DataTable();
 			SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=new_DB.sqlite;Version=3;");
@@ -91,16 +113,21 @@ namespace Urlaubsplaner
 			string eDay = this.label7.Text;
 			string tDays = this.label8.Text;
 			string vIssues = this.label9.Text;
+			string tId = this.label12.Text;
+			string vApplik = "Ja";
 			
 			DateTime dTime =  DateTime.ParseExact(fDay,"dd'.'MM'.'yyyy",CultureInfo.InvariantCulture);
 			DateTime dTime2 =  DateTime.ParseExact(eDay,"dd'.'MM'.'yyyy",CultureInfo.InvariantCulture);
+			
 			string newTime = dTime.ToString("yyyyMMdd");
 			string newTime2 = dTime2.ToString("yyyyMMdd");
-			
-			string query2 = String.Format("Insert Into Urlaubsübersicht (Von,Bis,Entspricht_Tage,User_ID) Values ('{0}','{1}','{2}','{3}');",newTime,newTime2,tDays,player);
+			string query2 = String.Format("Insert Into Urlaubsübersicht (User,Von,Bis,Entspricht_Tage,Team_ID,Beantragt) Values ('{0}','{1}','{2}','{3}','{4}','{5}');",player,newTime,newTime2,tDays,tId,vApplik);
 			string query3 = String.Format("Select * From Urlaubsübersicht where Von BETWEEN '{0}' AND  '{1}';", newTime,newTime2);
+			string gridQuery = String.Format("Select * From Urlaubsübersicht where Team_ID '{0}';", tId);
+			
 			SQLiteCommand command = new SQLiteCommand(query2, m_dbConnection);
 			SQLiteCommand command1 = new SQLiteCommand(query3, m_dbConnection);
+			
 			
 			command.ExecuteNonQuery();
  			dt2.Load(command1.ExecuteReader());
@@ -111,9 +138,40 @@ namespace Urlaubsplaner
  			DataGridView dataGridView1 = new DataGridView();
  			
  			this.dataGridView1.DataSource = dt2;
- 			
+ 				
+ 			Word.ApplicationClass WordApp = new Word.ApplicationClass();
+			object fileName = @"C:\\Users\\David\\Documents\\SharpDevelop Projects\\Urlaubsplaner\\Urlaubsantrag.docx";
+			object readOnly = false;
+			object isVisible = true;
+			object missing = Type.Missing;
+			object doctype = 0;
+
+					Word.Document myDoc = WordApp.Documents.Add(ref fileName, ref missing, ref doctype, ref isVisible);
+                    myDoc.Activate();
+     
+                    object Name = "Name";
+                    object VonBis = "Urlaubszeit";
+                    object Gesamttage = "Tage";
+      
+                    myDoc.Bookmarks.get_Item(ref Name).Range.Text = player;
+                    myDoc.Bookmarks.get_Item(ref VonBis).Range.Text = fDay +" " +  eDay;
+                    myDoc.Bookmarks.get_Item(ref Gesamttage).Range.Text = tDays;
+
+					WordApp.Visible = true;
             
 		}
 	
+		
+		void Button2Click(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void Button3Click(object sender, EventArgs e)
+		{
+			UserManager u_man = new UserManager();
+			u_man.ShowDialog();
+			
+		}
 	}
 }

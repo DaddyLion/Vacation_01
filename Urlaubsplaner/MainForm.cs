@@ -46,7 +46,7 @@ namespace Urlaubsplaner
 		void Button1Click(object sender, System.EventArgs e)
 		{
 		 	//UserManager u_man = new UserManager();
-		 	Select_Form s_Form = new Select_Form();
+		 	//Select_Form s_Form = new Select_Form();
 		 	
 			SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=new_DB.sqlite;Version=3;");
 			m_dbConnection.Open();
@@ -62,20 +62,35 @@ namespace Urlaubsplaner
  			
 			if(dt.Rows.Count > 0)
  			{
-				int permission_add_u = Convert.ToInt32(dt.Rows[0]["add_user"]);
-				int permission_app_vac = Convert.ToInt32(dt.Rows[0]["approve_vacation"]);
 				string user = dt.Rows[0].Field<string>(1);
-               
+				string team = dt.Rows[0].Field<string>(2);
+				
+				//MessageBox.Show("1 " + user);
+				Planer openForm = new Planer(user,team);
+				openForm.ShowDialog();
+			}
+			else {
+				MessageBox.Show("User oder Passwort falsch!");
+			}
+			
+			/*	//int permission_add_u = Convert.ToInt32(dt.Rows[0]["add_user"]);
+				//int permission_app_vac = Convert.ToInt32(dt.Rows[0]["approve_vacation"]);
+				string user = dt.Rows[0].Field<string>(1);
+				string team = dt.Rows[0].Field<string>(2);
+				
 				if (permission_add_u == 1 && permission_app_vac == 1)
 				{
 					//MessageBox.Show("1 " + user);
+					
+					//MessageBox.Show("1 " + team);
+					Select_Form s_Form = new Select_Form(user,team);
 					s_Form.ShowDialog();
 					
 				}
 				else
 				{
 					//MessageBox.Show("2 " + user);
-					Planer openForm = new Planer(user);
+					Planer openForm = new Planer(user,team);
 					openForm.ShowDialog();
 				}
 	
@@ -85,7 +100,7 @@ namespace Urlaubsplaner
  				MessageBox.Show("User oder Passwort falsch!");
  				
 			}
- 			
+ 			*/
 		}
 		
 		void TextBox1TextChanged(object sender, EventArgs e)

@@ -13,9 +13,6 @@ namespace Urlaubsplaner
 	/// </summary>
 	public partial class UserManager : Form
 	{
-		
-		
-		
 		public UserManager()
 		{
 			//
