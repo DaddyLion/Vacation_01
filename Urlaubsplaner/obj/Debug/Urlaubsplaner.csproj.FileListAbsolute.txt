@@ -17,3 +17,4 @@ C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\de\MigraD
 C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\de\MigraDoc.Rendering.resources.dll
 C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\de\MigraDoc.RtfRendering.resources.dll
 C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\Urlaubsplaner.exe.config

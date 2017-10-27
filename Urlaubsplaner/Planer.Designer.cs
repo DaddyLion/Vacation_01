@@ -53,6 +53,7 @@ namespace Urlaubsplaner
 			this.label12 = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
+			this.button4 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -192,7 +193,7 @@ namespace Urlaubsplaner
 			// button2
 			// 
 			this.button2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
-			this.button2.Location = new System.Drawing.Point(782, 113);
+			this.button2.Location = new System.Drawing.Point(783, 113);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(179, 68);
 			this.button2.TabIndex = 18;
@@ -211,11 +212,23 @@ namespace Urlaubsplaner
 			this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click += new System.EventHandler(this.Button3Click);
 			// 
+			// button4
+			// 
+			this.button4.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold);
+			this.button4.Location = new System.Drawing.Point(783, 39);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(178, 68);
+			this.button4.TabIndex = 20;
+			this.button4.Text = "Prüfen";
+			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.Button4Click);
+			// 
 			// Planer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(980, 618);
+			this.Controls.Add(this.button4);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.label12);
@@ -239,6 +252,7 @@ namespace Urlaubsplaner
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Label label12;

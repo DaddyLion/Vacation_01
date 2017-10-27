@@ -8,21 +8,15 @@ using System.Text;
 
 namespace Urlaubsplaner
 {
-	/// <summary>
-	/// Description of UserManager.
-	/// </summary>
+	
 	public partial class UserManager : Form
 	{
 		public UserManager()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
+			
 			InitializeComponent();
 			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
+			
 		}
 		
 		static string sha256(string randomString)
