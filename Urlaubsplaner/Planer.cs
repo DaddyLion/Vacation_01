@@ -9,14 +9,12 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Data;
 using System.Text;
-using MigraDoc.DocumentObjectModel.Tables;
-using PdfSharp;
-using PdfSharp.Drawing;
-using PdfSharp.Pdf.Printing;
-using PdfSharp.Pdf;
 using System.Globalization;
+
 using Word = Microsoft.Office.Interop.Word;
 using Outlook = Microsoft.Office.Interop.Outlook;
+
+
 
 namespace Urlaubsplaner
 {
@@ -170,10 +168,34 @@ namespace Urlaubsplaner
 				
 				//this.dataGridView1.DataSource = dt3;
 				
+				// Email 
+				Microsoft.Office.Interop.Outlook.NameSpace lo_NSpace;
+				Microsoft.Office.Interop.Outlook.MAPIFolder lo_Folder;
+				Microsoft.Office.Interop.Outlook.Application lo_OutApp;
+				Microsoft.Office.Interop.Outlook.MailItem lo_Item;
+	
+				lo_OutApp = new Microsoft.Office.Interop.Outlook.Application();
 				
+				lo_NSpace = lo_OutApp.GetNamespace("MAPI");
 				
+				lo_Folder = lo_NSpace.GetDefaultFolder(Microsoft.Office.Interop.Outlook.OlDefaultFolders.olFolderSentMail);
 				
+				lo_Item = (Microsoft.Office.Interop.Outlook.MailItem)lo_Folder.Items.Add(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
+				
+				lo_Item.To = who;
+				
+				lo_Item.Subject = "Urlaub";
+				lo_Item.Body = "Hallo "+ who + " ich habe deinen Urlaub in der Zeit vom " + von + " bis "+ bis +" genehmigt.";
+				//NachrichtenFormat
+				lo_Item.BodyFormat = Microsoft.Office.Interop.Outlook.OlBodyFormat.olFormatRichText;
+				
+				//Anzeigen modal
+				lo_Item.Display(true);
+				
+				//Senden der Mail
+				lo_Item.Send();
 
+				
 		}
 		
 		void Button3Click(object sender, EventArgs e)

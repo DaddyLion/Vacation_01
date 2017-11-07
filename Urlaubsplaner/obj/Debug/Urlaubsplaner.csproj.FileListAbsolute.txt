@@ -8,13 +8,4 @@ C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubspl
 C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.Planer.resources
 C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\System.Data.SQLite.dll
 C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\obj\Debug\Urlaubsplaner.UserManager.resources
-C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\MigraDoc.DocumentObjectModel.dll
-C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\MigraDoc.Rendering.dll
-C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\MigraDoc.RtfRendering.dll
-C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\PdfSharp.Charting.dll
-C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\PdfSharp.dll
-C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\de\MigraDoc.DocumentObjectModel.resources.dll
-C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\de\MigraDoc.Rendering.resources.dll
-C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\de\MigraDoc.RtfRendering.resources.dll
-C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\David\Documents\SharpDevelop Projects\Urlaubsplaner\bin\Debug\Urlaubsplaner.exe.config
